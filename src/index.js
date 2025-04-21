@@ -21,9 +21,10 @@
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 import { app } from "./App.js"; // Import the app instance from App.js
+import express from "express";
 
 dotenv.config({ path: "./env" }); // Load environment variables
-
+app.use(express.json());
 // Connect to the database and start the server
 connectDB()
   .then(() => {
